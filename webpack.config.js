@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -7,8 +8,22 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.pug',
+      title: 'Output Management'
+    })
+  ],
+
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        options: {
+            pretty: true
+        }
+      },
       {
         test: /\.css$/,
         use: [
