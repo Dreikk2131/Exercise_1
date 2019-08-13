@@ -1,29 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const pug = require('./webpack/pug');
+const devserver = require('./webpack/devserver');
 
-module.exports = {
+const common = merge([{
   entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
-
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.pug',
       title: 'Output Management'
     })
   ],
-
   module: {
     rules: [
-      {
-        test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-            pretty: true
-        }
-      },
       {
         test: /\.css$/,
         use: [
@@ -45,4 +39,18 @@ module.exports = {
       }
     ]
   }
-};
+},
+pug()
+]);
+
+module.exports = function(env){
+  if(env==='production'){
+    return common;
+  }
+  if(env==='development'){
+    return merge([
+      common,
+      devserver()
+    ])
+  }
+}
