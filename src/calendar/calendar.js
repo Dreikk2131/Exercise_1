@@ -1,5 +1,5 @@
-import './datepicker.css';
-import './datepicker';
+import '../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+import '../../node_modules/air-datepicker/dist/js/datepicker.min';
 import './calendar.scss';
 
 export function calendar(){
