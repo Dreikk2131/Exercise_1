@@ -8,14 +8,4 @@ export function calendar(){
         multipleDates: true,
         clearButton: true
     })
-
-
-    var date = new Date();
-    var options = {
-        year: 'numeric',
-        month: 'long'
-    }
-
-
-    alert( date.toLocaleString("ru", options) );
 }
