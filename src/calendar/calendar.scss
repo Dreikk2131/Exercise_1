@@ -1,0 +1,121 @@
+$main-color: #BC9CFF;
+$text-color:rgba(31, 32, 65, 0.75);
+
+font-face {
+    font-family: 'Montserrat';
+    src:  url('./Montserrat.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.calendar{
+    box-sizing: border-box;
+    width: 150px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+}
+
+.calendar__date-input{
+    font-family: 'Montserrat';
+    display: inline-block;
+    box-sizing: border-box;
+    width: 148px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    color:$text-color;
+    border:none;
+    padding-top:12px;
+    padding-bottom:9px;
+    padding-left:15px;
+}
+
+.calendar__arrow{
+    display: inline-block;
+    width:7px;
+    height: 7px;
+    border:none;
+    border-bottom:2px solid rgba(31, 32, 65, 0.5);
+    border-right:2px solid rgba(31, 32, 65, 0.5);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: absolute;
+    top:15px;
+    right: 15px;
+}
+
+.datepicker{
+    width: 320px;
+    height: 369px;
+    border:1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+}
+
+.datepicker--nav{
+    box-sizing: border-box;
+    padding-top:21px;
+    padding-bottom: 20px;
+
+}
+
+.datepicker--nav-title{
+    color:#1F2041;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.datepicker--content{
+    height: 240px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    line-height: 15px;
+    font-style: normal;
+}
+
+.datepicker--day-name{
+    color:$main-color;
+    font-weight: bold;
+    width: 39.88px;
+    height: 40px;
+}
+
+.datepicker--cell-day{
+    width: 39.88px;
+    height: 40px;
+}
+
+.datepicker--cell-day.-current- {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    color:white;
+}
+
+
+.datepicker--cell-day.-selected-{
+    background: $main-color;
+}
+
+.datepicker--cell-day.-focus-{
+    background: $main-color;
+}
+
+.datepicker--cell-day.-focus-.-selected-{
+    background: $main-color;
+}
+
+.datepicker--button{
+    color: rgba(31, 32, 65, 0.5);
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}

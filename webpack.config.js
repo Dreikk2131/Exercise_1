@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
+var webpack = require('webpack');
 
 const common = merge([{
   entry: './src/index.js',
@@ -11,13 +12,26 @@ const common = merge([{
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery/dist/jquery.min.js",
+      jQuery: "jquery/dist/jquery.min.js"
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
       title: 'Output Management'
     })
+    
   ],
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+        ]
+      },
       {
         test: /\.css$/,
         use: [
