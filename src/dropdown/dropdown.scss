@@ -1,7 +1,77 @@
-.dropdown__type-people{
+$text-color: #1F2041;
+$border-color:rgba(31, 32, 65, 0.5);
+$disable-color:rgba(31, 32, 65, 0.20);
+
+font-face {
+    font-family: 'Montserrat';
+    src:  url('../fonts/Montserrat.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.dropdown__common-num-people{
+    width: 320px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: relative;
+    padding-top:12.5px;
+    padding-left:15px;
+    color:$border-color;
+}
+
+.dropdown__arrow{
     display: inline-block;
+    width:7px;
+    height: 7px;
+    border:none;
+    border-bottom:2px solid rgba(31, 32, 65, 0.5);
+    border-right:2px solid rgba(31, 32, 65, 0.5);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: absolute;
+    top:15px;
+    right: 13px;
+}
+
+.dropdown__type-people{
+    font-family: 'Montserrat';
+    display: inline-block;
+    width: 83px;
+    height: 15px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: $text-color;
+}
+
+.dropdown__value{
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .dropdown__operations{
     display: inline-block;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    border:1px solid $border-color;
+    background-color: #ffffff;
+    color:$border-color;
 }
+
+.dropdown__operations_minus{
+    margin-left: 123px;
+}
+
+.dropdown__operations_minus:disabled{
+    border:1px solid $disable-color;
+    color:$disable-color;
+}
+
