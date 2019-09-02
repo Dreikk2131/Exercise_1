@@ -1,74 +1,80 @@
 import './dropdown.scss'
 
 export function dropdown(){
+    let amount = {
+        people:0,
+        children:0,
+        baby:0
+    }
 
-    let amountPeople = 0;
-    let amountChildren = 0;
-    let amountBaby = 0;
     let amountOver = 0;
 
-    $(".dropdown__value.people").text(amountPeople);
-    $(".dropdown__value.children").text(amountChildren);
-    $(".dropdown__value.baby").text(amountBaby);
+    $(".dropdown__value.people").text(amount.people);
+    $(".dropdown__value.children").text(amount.children);
+    $(".dropdown__value.baby").text(amount.baby);
 
     $(".dropdown__operations_minus").attr("disabled", "disabled");
 
-    //Уменьшение переменной "amount"
+    //Шаблон по уменьшению переменных
+    function minus(a){
+        amount[a] -=1;
+        $(".dropdown__value." + a).text(amount[a]);
+        if(amount[a]<=0){
+            $(".dropdown__operations_minus." + a).attr("disabled", "disabled");
+        }
+    }
+
+    //Шаблон по увеличению переменных
+    function plus(b){
+        amount[b] += 1;
+        $(".dropdown__operations_minus." + b).removeAttr("disabled");
+        $(".dropdown__value." + b).text(amount[b]);
+    }
+
+    //Увеличение количества взрослых
     $(".dropdown__operations_minus.people").click(function(){
-        amountPeople -=1;
-        $(".dropdown__value.people").text(amountPeople);
-        if(amountPeople<=0){
-            $(".dropdown__operations_minus.people").attr("disabled", "disabled");
-        }
+        minus("people");
+        
     })
 
-    //Увеличение переменной "amount"
+    //Увеличение количества взрослых
     $(".dropdown__operations_plus.people").click(function(){
-        amountPeople = amountPeople +1; 
-        $(".dropdown__operations_minus.people").removeAttr("disabled");
-        $(".dropdown__value.people").text(amountPeople);
+        plus("people");
+        
     })
 
+    //Увеличение количества детей
     $(".dropdown__operations_minus.children").click(function(){
-        amountChildren -=1;
-        $(".dropdown__value.children").text(amountChildren);
-        if(amountChildren<=0){
-            $(".dropdown__operations_minus.children").attr("disabled", "disabled");
-        }
+        minus("children");
     })
 
+    //Увеличение количества детей
     $(".dropdown__operations_plus.children").click(function(){
-        amountChildren +=1; 
-        $(".dropdown__operations_minus.children").removeAttr("disabled");
-        $(".dropdown__value.children").text(amountChildren);
+        plus("children");
     })
 
+    //Увеличение количества малышей
     $(".dropdown__operations_minus.baby").click(function(){
-        amountBaby -=1;
-        $(".dropdown__value.baby").text(amountBaby);
-        if(amountBaby<=0){
-            $(".dropdown__operations_minus.baby").attr("disabled", "disabled");
-        }
+        minus("baby");
     })
 
+    //Увеличение количества малышей
     $(".dropdown__operations_plus.baby").click(function(){
-        amountBaby +=1; 
-        $(".dropdown__operations_minus.baby").removeAttr("disabled");
-        $(".dropdown__value.baby").text(amountBaby);
+        plus("baby");
     })
 
     $(".dropdown__button-clear").click(function(){
-        amountPeople = 0;
-        amountChildren = 0;
-        amountBaby = 0;
-        $(".dropdown__value.people").text(amountPeople);
-        $(".dropdown__value.children").text(amountChildren);
-        $(".dropdown__value.baby").text(amountBaby);
+        amount.baby = 0;
+        amount.children = 0;
+        amount.people = 0;
+        $(".dropdown__value.people").text(amount.people);
+        $(".dropdown__value.children").text(amount.children);
+        $(".dropdown__value.baby").text(amount.baby);
         $(".dropdown__common-num-people").text("Сколько гостей");
     })
 
     $(".dropdown__button-apply").click(function(){
-        amountOver = amountBaby + amountChildren + amountPeople;
+        amountOver = amount.people + amount.children + amount.baby;
         $(".dropdown__common-num-people").text(amountOver + " гостей");
     })
 

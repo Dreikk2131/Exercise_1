@@ -3,10 +3,31 @@ $border-color:rgba(31, 32, 65, 0.5);
 $disable-color:rgba(31, 32, 65, 0.20);
 
 font-face {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     src:  url('../fonts/Montserrat.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+}
+
+@mixin style-text {
+    font: {
+        style: normal;
+        weight: bold;
+        size: 12px;
+    
+    }
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+@mixin style-button {
+    background-color: #ffffff;
+    border: none;
+    padding: 0px;
+}
+
+.dropdown{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .dropdown__common-num-people{
@@ -14,7 +35,8 @@ font-face {
     height: 44px;
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
-    border-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     position: relative;
     padding-top:12.5px;
     padding-left:15px;
@@ -37,18 +59,25 @@ font-face {
     right: 13px;
 }
 
+.dropdown__field-types-people{
+    width: 320px;
+    height: 159px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-top: none;
+    margin-top:-1;
+    padding-right: 5px;
+}
+
 .dropdown__type-people{
-    font-family: 'Montserrat';
+    @include style-text;
     display: inline-block;
     width: 83px;
     height: 15px;
     margin-left: 15px;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
     color: $text-color;
+    font-weight:800;
 }
 
 .dropdown__value{
@@ -67,11 +96,30 @@ font-face {
 }
 
 .dropdown__operations_minus{
-    margin-left: 123px;
+    margin-left: 116px;
 }
 
 .dropdown__operations_minus:disabled{
     border:1px solid $disable-color;
     color:$disable-color;
 }
+
+.dropdown__button-clear{
+    @include style-text;
+    @include style-button;
+    width: 72px;
+    height: 15px;
+    color: rgba(31, 32, 65, 0.5);
+    margin-left: 15px;
+}
+
+.dropdown__button-apply{
+    @include style-button;
+    @include style-text;
+    width: 84px;
+    height: 15px;
+    color: #BC9CFF;
+    margin-left: 135px;
+}
+
 

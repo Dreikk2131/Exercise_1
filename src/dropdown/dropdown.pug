@@ -7,9 +7,9 @@ article.dropdown
             button.dropdown__operations.dropdown__operations_minus(class=attributes.class) -
             span.dropdown__value(class=attributes.class)
             button.dropdown__operations.dropdown__operations_plus(class=attributes.class) +
-
-    +dropdown("Взрослые")(class="people")
-    +dropdown("Дети")(class="children")
-    +dropdown("Младенцы")(class="baby")
-    button.dropdown__button-clear Очистить 
-    button.dropdown__button-apply Применить
+    div.dropdown__field-types-people
+        +dropdown("Взрослые")(class="people")
+        +dropdown("Дети")(class="children")
+        +dropdown("Младенцы")(class="baby")
+        button.dropdown__button-clear Очистить 
+        button.dropdown__button-apply Применить
