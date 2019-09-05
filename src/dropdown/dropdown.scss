@@ -24,23 +24,31 @@ font-face {
     background-color: #ffffff;
     border: none;
     padding: 0px;
+    font-weight: bold;
 }
 
 .dropdown{
     font-family: 'Montserrat', sans-serif;
+    position: relative;
 }
 
-.dropdown__common-num-people{
+.dropdown__article{
     width: 320px;
     height: 44px;
+    background: #ffffff;
     border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     position: relative;
-    padding-top:12.5px;
+}
+
+.dropdown__common-num-people{
+    display: inline-block;
     padding-left:15px;
+    padding-top:13px;
     color:$border-color;
+    margin:0px;
 }
 
 .dropdown__arrow{
@@ -60,6 +68,7 @@ font-face {
 }
 
 .dropdown__field-types-people{
+    background: #ffffff;
     width: 320px;
     height: 159px;
     border: 1px solid rgba(31, 32, 65, 0.5);
@@ -68,21 +77,35 @@ font-face {
     border-top: none;
     margin-top:-1;
     padding-right: 5px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.dropdown__choose-num-guest{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 .dropdown__type-people{
     @include style-text;
     display: inline-block;
+    box-sizing: border-box;
     width: 83px;
-    height: 15px;
-    margin-left: 15px;
+    margin-left: 13px;
     color: $text-color;
     font-weight:800;
+    margin-bottom: 4px;
 }
 
 .dropdown__value{
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: bold;
+}
+
+.dropdown__operations-block{
+    padding-top: 5px;
 }
 
 .dropdown__operations{
@@ -93,10 +116,6 @@ font-face {
     border:1px solid $border-color;
     background-color: #ffffff;
     color:$border-color;
-}
-
-.dropdown__operations_minus{
-    margin-left: 116px;
 }
 
 .dropdown__operations_minus:disabled{
@@ -110,7 +129,8 @@ font-face {
     width: 72px;
     height: 15px;
     color: rgba(31, 32, 65, 0.5);
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-top:15px;
 }
 
 .dropdown__button-apply{
@@ -119,7 +139,14 @@ font-face {
     width: 84px;
     height: 15px;
     color: #BC9CFF;
-    margin-left: 135px;
+    margin-left: 142px;
+    margin-top:15px;
+}
+
+.dropdown__button, 
+.dropdown__button:active, 
+.dropdown__button:focus {
+    outline: none;
 }
 
 

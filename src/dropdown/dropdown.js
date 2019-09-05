@@ -63,6 +63,8 @@ export function dropdown(){
         plus("baby");
     })
 
+
+    //Кнопка очистки поля
     $(".dropdown__button-clear").click(function(){
         amount.baby = 0;
         amount.children = 0;
@@ -73,11 +75,35 @@ export function dropdown(){
         $(".dropdown__common-num-people").text("Сколько гостей");
     })
 
+    //Кнопка применение выбранного количества человек
     $(".dropdown__button-apply").click(function(){
         amountOver = amount.people + amount.children + amount.baby;
-        $(".dropdown__common-num-people").text(amountOver + " гостей");
+        let remain = amountOver%10;
+        if(amountOver>10 && amountOver<15){
+            $(".dropdown__common-num-people").text(amountOver + " гостей");
+        }
+        else if(remain<2){
+            $(".dropdown__common-num-people").text(amountOver + " гость");
+        } else if (remain<5){
+            $(".dropdown__common-num-people").text(amountOver + " гостя");
+        } else {
+            $(".dropdown__common-num-people").text(amountOver + " гостей");
+        }
+        
     })
 
-    amountOver = amountBaby + amountChildren + amountPeople;
-    
+    $(".dropdown__article").click(function(){
+        let hidden = $(".dropdown__field-types-people").attr("hidden");
+        if(hidden == "hidden"){
+            $(".dropdown__field-types-people").removeAttr("hidden");
+        } else {
+            $(".dropdown__field-types-people").attr("hidden", "true");
+        }
+        
+    })
+
+    $(".dropdown__button-apply").click(function(){
+        $(".dropdown__field-types-people").attr("hidden", "true");
+    })
+
 }
