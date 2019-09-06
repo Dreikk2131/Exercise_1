@@ -69,6 +69,7 @@ export function dropdown(){
         amount.baby = 0;
         amount.children = 0;
         amount.people = 0;
+        $(".dropdown__operations_minus").attr("disabled", "disabled");
         $(".dropdown__value.people").text(amount.people);
         $(".dropdown__value.children").text(amount.children);
         $(".dropdown__value.baby").text(amount.baby);
@@ -79,7 +80,10 @@ export function dropdown(){
     $(".dropdown__button-apply").click(function(){
         amountOver = amount.people + amount.children + amount.baby;
         let remain = amountOver%10;
-        if(amountOver>10 && amountOver<15){
+        if(amountOver == 0){
+            $(".dropdown__common-num-people").text("Сколько гостей");
+        }
+        else if(amountOver>10 && amountOver<15){
             $(".dropdown__common-num-people").text(amountOver + " гостей");
         }
         else if(remain<2){
