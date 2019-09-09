@@ -1,14 +1,18 @@
 
 article.find-hotel-number
     h2.find-hotel-number__article Найдем номера под ваши пожелания
-    div.find-hotel-number__arrive
+    div.find-hotel-number__arrive-date
         div.find-hotel-number__arrive-block
             p.find-hotel-number__arrive-article Прибытие
+            div.find-hotel-number__block
+                input(type='text' class="find-hotel-number__arrive-date find-hotel-number__arrive-date_margin calendar__date-input" value="ДД.ММ.ГГГГ")
+                label.find-hotel-number__arrow(for="date")
             include ../calendar/calendar.pug
         div.find-hotel-number__arrive-block.find-hotel-number__arrive-article_margin
             p.find-hotel-number__arrive-article Выезд
-            include ../calendar/calendar.pug
+            div.find-hotel-number__block
+                input(type='text' class="find-hotel-number__exit-date find-hotel-number__arrive-date_margin" value="ДД.ММ.ГГГГ")
+                label.find-hotel-number__arrow(for="date")
     div.find-hotel-number__guest
         p.find-hotel-number__arrive-article Гости
-        include ../dropdown/dropdown.pug
     button.find-hotel-number__button Подобрать номер
