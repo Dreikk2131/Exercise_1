@@ -1,7 +1,7 @@
 $main-color: #BC9CFF;
 $text-color:rgba(31, 32, 65, 0.75);
 
-font-face {
+@font-face {
     font-family: 'Montserrat', sans-serif;
     src:  url('../fonts/Montserrat.woff') format('woff');
     font-weight: 600;
@@ -52,23 +52,30 @@ font-face {
     height: 40px;
 }
 
+.datepicker--cell-day{
+    width: 39px;
+}
 
 .datepicker--cell-day.-current- {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     color:white;
+    border-radius: 50%;
 }
 
 
 .datepicker--cell-day.-selected-{
     background: $main-color;
+    border-radius: 50%;
 }
 
 .datepicker--cell-day.-focus-{
     background: $main-color;
+    border-radius: 50%;
 }
 
 .datepicker--cell-day.-focus-.-selected-{
     background: $main-color;
+    border-radius: 50%;
 }
 
 .datepicker--button{
@@ -78,4 +85,89 @@ font-face {
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
+}
+
+.datepicker--button{
+    display: inline-block;
+    font-family: 'Montserrat',  sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.datepicker--button:hover{
+    color:$main-color;
+    background: none;
+}
+
+.date-picker__button-accept{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+    background: none;
+    border:none;
+    outline: none;
+    padding:0px;
+    margin:0px;
+    width: 84px;
+    height: 15px;
+    margin-top:7px;
+    margin-right: 10px;
+}
+
+.date-picker__button-accept:hover{
+    color:$main-color;
+}
+
+@mixin arrow{
+    border:2px solid $main-color;
+    display:block;
+    height:10px;
+    width:10px;
+    transform:rotate(45deg);
+}
+
+@mixin arrow-before{
+    content: "";
+    display:block;
+    height:15px;
+    width:10px;
+    transform:rotate(45deg);
+    border-left: 2px solid $main-color;
+    top:1px;
+    left:2.5px;
+    position:absolute;
+}
+
+.datepicker__arrow{
+    position: relative;
+}
+
+.datepicker__arrow-next{
+    @include arrow;
+    border-bottom:none;
+    border-left:none;
+}
+
+.datepicker__arrow-next::before{
+    @include arrow-before;
+}
+
+.datepicker__arrow-prev{
+    @include arrow;
+    border-top:none;
+    border-right: none;
+}
+
+.datepicker__arrow-prev::before{
+    @include arrow-before;
 }

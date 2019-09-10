@@ -18,7 +18,8 @@ const common = merge([{
     }),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
-      title: 'Output Management'
+      title: 'Output Management',
+      fixAssets: true
     })
     
   ],
@@ -46,9 +47,14 @@ const common = merge([{
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options:{
+              name:'./fonts/[name].[ext]'
+            }
+          }
         ]
       }
     ]
