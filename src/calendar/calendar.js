@@ -6,7 +6,6 @@ export function calendar(){
     $(".calendar__date-input").datepicker({
         multipleDates: 2,
         clearButton: true,
-        inline:true,
         navTitles: {
             days: 'MM yyyy'
         },
