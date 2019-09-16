@@ -4,12 +4,14 @@ import "./style.scss";
 
 import {calendar} from "./calendar/calendar";
 import { dropdown } from "./dropdown/dropdown";
-import {findHotelNumber} from "./find-hotel-number/find-hotel-number";
+import "./find-hotel-number/find-hotel-number";
+import {arriveBlock} from "./arrive-block/arrive-block";
+import "./reserve/reserve";
 
 $(document).ready(function(){
     calendar();
     dropdown();
-    findHotelNumber();
+    arriveBlock();
 })
 
 

@@ -28,9 +28,9 @@ const common = merge([{
       {
         test: /\.scss$/,
         use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
+            {loader: 'style-loader'},
+            {loader:'css-loader'},
+            {loader:'sass-loader'}
         ]
       },
       {

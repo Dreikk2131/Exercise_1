@@ -21,14 +21,14 @@ export function calendar(){
 //Распределение чисел от меньшего к большему по input
             if(d<0){
                 let o = date[0].toLocaleString("ru", options);
-                $(".find-hotel-number__arrive-date").val(o);
+                $(".arrive-block__arrive-date").val(o);
                 let a = date[1].toLocaleString("ru", options); 
-                $(".find-hotel-number__exit-date").val(a);
+                $(".arrive-block__exit-date").val(a);
             } else if(d>0){
                 let a = date[1].toLocaleString("ru", options);
-                $(".find-hotel-number__arrive-date").val(a);
+                $(".arrive-block__arrive-date").val(a);
                 let o = date[0].toLocaleString("ru", options);
-                $(".find-hotel-number__exit-date").val(o);
+                $(".arrive-block__exit-date").val(o);
             }
             
         }
@@ -37,8 +37,8 @@ export function calendar(){
     $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
 
     $(".datepicker--button").click(function(){
-        $(".find-hotel-number__arrive-date").val("ДД.ММ.ГГГГ");
-        $(".find-hotel-number__exit-date").val("ДД.ММ.ГГГГ");
+        $(".arrive-block__arrive-date").val("ДД.ММ.ГГГГ");
+        $(".arrive-block__exit-date").val("ДД.ММ.ГГГГ");
     })
 
     $(".date-picker__button-accept").click(function(){

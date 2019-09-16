@@ -37,69 +37,6 @@ font-face {
     padding-bottom: 8px;
 }
 
-.find-hotel-number__arrive-date{
-    display: flex;
-}
-
-.find-hotel-number__block{
-    box-sizing: border-box;
-    width: 150px;
-    height: 44px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    position: relative;
-}
-
-.find-hotel-number__arrive-date_margin{
-    font-family: 'Montserrat';
-    display: inline-block;
-    box-sizing: border-box;
-    width: 148px;
-    height: 40px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 18px;
-    color:$text-color;
-    border:none;
-    padding-top:12px;
-    padding-bottom:9px;
-    padding-left:15px;
-    color:rgba(31, 32, 65, 0.75);
-    outline:none;
-}
-
-.find-hotel-number__arrow{
-    display: inline-block;
-    width:7px;
-    height: 7px;
-    border:none;
-    border-bottom:2px solid rgba(31, 32, 65, 0.5);
-    border-right:2px solid rgba(31, 32, 65, 0.5);
-    -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
-    -ms-transform:rotate(45deg);
-    transform:rotate(45deg);
-    position: absolute;
-    top:15px;
-    right: 15px;
-}
-
-.find-hotel-number__arrive-article_margin{
-    padding-left:20px;
-}
-
-.find-hotel-number__arrive-article{
-    margin:0px;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 750;
-    font-size: 12px;
-    line-height: 20px;
-    color:$text-color;
-    padding-bottom: 2px;
-}
-
 .find-hotel-number__guest{
     padding-top:20px;
 }

@@ -1,0 +1,90 @@
+$article-color:#1F2041;
+$text-color:#8f8fa0;
+
+font-face {
+    font-family: 'Montserrat', sans-serif;
+    src:  url('../fonts/Montserrat.woff') format('woff');
+    font-family: 'Open Sans', sans-serif;
+    src:  url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    }
+
+.reserve {
+    font-family: 'Montserrat', sans-serif;
+    width: 380px;
+    height: 511px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding:30px;
+    padding-top:40px;
+}
+
+.reserve__hedder{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+@mixin number-room {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 17px;
+    margin:0px;
+    color:$article-color;
+    display: inline-block;
+}
+
+.reserve__number{
+    @include number-room;
+    font-size: 12px;
+}
+
+.reserve__room-number{
+    @include number-room;
+    font-size: 16px;
+}
+
+.reserve__type-room{
+    display: inline-block;
+    margin:0px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color:#BC9CFF;
+}
+
+.reserve__price-number-block{
+    color:$text-color;
+}
+
+.reserve__price-number{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    margin:0px;
+}
+
+.reserve__price-number-symbol{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    margin:0px;
+}
+
+.reserver__price-day{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 200;
+    margin:0px;
+}

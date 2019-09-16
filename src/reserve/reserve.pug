@@ -1,3 +1,29 @@
 section.reserve
-    h2.reserve__room-number
-    p.reserve__price-number
+    div.reserve__hedder
+        div.reserve__room-number-block
+            p.reserve__number №
+            p.reserve__room-number 888 
+            p.reserve__type-room люкс
+        div.reserve__price-number-block
+            p.reserve__price-number 9 990
+            span.reserve__price-number-symbol &#8381;
+            p.reserver__price-day в сутки
+    include ../arrive-block/arrive-block.pug
+    div.reserve__guests
+        p.reserve__guests-article Гости
+        include ../dropdown/dropdown.pug
+    div.reserve__sum-block
+        p.reserve__calculation 9900P x 4 суток
+        p.reserve__sum 39 960 P
+    div.reserve__discount-block
+        p.reserve__discount Сбор за услуги: скидка 2 179Р
+            span.reserve__info i
+        p.reserve__discount-sum 0р
+    div.reserve__additional-services-block
+        p.reserve__additional-services Сбор за дополнительные услуги
+            span.reserve__additional-services-info
+        span.reserve__additional-services-sum 300p
+    div.reserve__total-block
+        p.reserve__total Итого
+        span.reserve__total-sum 38 081р
+            

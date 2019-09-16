@@ -28,6 +28,7 @@
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass-loader": "^7.3.1",
+    "sugarss": "^2.0.0",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   }
