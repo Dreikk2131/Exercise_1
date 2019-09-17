@@ -5,6 +5,34 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family:'Montserrat-Regular';
+    src:url('./fonts/Montserrat-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family:'Montserrat-Regular';
+    src:url('./fonts/Montserrat-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family:'OpenSans-Regular';
+    src:url('./fonts/OpenSans-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family:'OpenSans-Regular';
+    src:url('./fonts/OpenSansBold.woff') format('woff');
+    font-style: normal;
+    font-weight: bold;
+}
+
 body{
     font-family: 'Lobster';
 }
