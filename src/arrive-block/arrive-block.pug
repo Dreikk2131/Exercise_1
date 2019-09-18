@@ -2,10 +2,12 @@ div.arrive-block
         div.arrive-block__main-content
             p.arrive-block__arrive-article Прибытие
             div.arrive-block__input-block
-                input(type='text' value="ДД.ММ.ГГГГ" class="arrive-block__arrive-date arrive-block__arrive-date_margin calendar__date-input" )
+                input(type='text' value="ДД.ММ.ГГГГ" class="arrive-block__arrive-date arrive-block__arrive-date_margin" )
                 label.arrive-block__arrow(for="date")
+                include ../calendar/calendar.pug
         div.arrive-block__main-content.arrive-block__main-content_margin
             p.arrive-block__arrive-article Выезд
             div.arrive-block__input-block
                 input(type='text' class="arrive-block__exit-date arrive-block__arrive-date_margin" value="ДД.ММ.ГГГГ")
                 label.arrive-block__arrow(for="date")
+        

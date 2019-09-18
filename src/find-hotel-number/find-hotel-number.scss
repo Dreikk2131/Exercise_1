@@ -1,19 +1,10 @@
 $text-color:#1F2041;
 $text-color-field:rgba(31, 32, 65, 0.75);
 
-font-face {
-    font-family: 'Montserrat', sans-serif;
-    src:  url('../fonts/Montserrat-Regular.woff') format('woff');
-    font-family: 'Quicksand';
-    src:  url('../fonts/Quicksand.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    }
-
 .find-hotel-number{
     width: 380px;
     height: 374px;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat-Regular';
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -24,7 +15,7 @@ font-face {
 }
 
 .find-hotel-number__article{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'OpenSans-Regular';
     height: 60px;
     font-style: normal;
     font-weight: 750;
@@ -42,18 +33,15 @@ font-face {
     padding-bottom: 31px;
 }
 
-.find-hotel-number__guest-amount{
-    border-radius: 4px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    width: 320px;
-    height:44px;
-    position: relative;
-    color:$text-color-field;
-    padding-top:11px;
-    padding-bottom: 16px;
-    padding-left:15px;
-    
+.find-hotel-number__arrive-article{
+    margin:0px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 750;
+    font-size: 12px;
+    line-height: 20px;
+    color:$text-color;
+    padding-bottom: 2px;
 }
 
 

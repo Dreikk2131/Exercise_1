@@ -8,6 +8,13 @@ $text-color:rgba(31, 32, 65, 0.75);
     font-style: normal;
 }
 
+.calendar__date-input{
+    position: absolute;
+    left:1px;
+    bottom: 1px;
+    visibility: hidden;
+}
+
 .datepicker{
     width: 320px;
     height: 369px;
@@ -52,30 +59,33 @@ $text-color:rgba(31, 32, 65, 0.75);
     height: 40px;
 }
 
-.datepicker--cell-day{
-    width: 39px;
-}
-
 .datepicker--cell-day.-current- {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background-image: url(Rectangle.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
     color:white;
-    border-radius: 50%;
+
 }
 
+@mixin circle {
+    background: none;
+    background-image: url(Rectangle2.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .datepicker--cell-day.-selected-{
-    background: $main-color;
-    border-radius: 50%;
+    @include circle();
 }
 
 .datepicker--cell-day.-focus-{
-    background: $main-color;
-    border-radius: 50%;
+    @include circle();
 }
 
 .datepicker--cell-day.-focus-.-selected-{
-    background: $main-color;
-    border-radius: 50%;
+    @include circle();
 }
 
 .datepicker--button{

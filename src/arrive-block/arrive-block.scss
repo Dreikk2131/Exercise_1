@@ -2,6 +2,7 @@ $text-color:#1F2041;
 
 .arrive-block{
     display: flex;
+    font-family: 'Montserrat-Regular';
 }
 
 .arrive-block__main-content_margin{
@@ -61,4 +62,5 @@ $text-color:#1F2041;
     position: absolute;
     top:15px;
     right: 15px;
+    pointer-events:none;
 }
