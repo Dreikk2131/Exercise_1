@@ -1,11 +1,13 @@
 import "../../node_modules/air-datepicker/dist/css/datepicker.min.css";
-import "../../node_modules/air-datepicker/dist/js/datepicker.min";
+import "../../node_modules/air-datepicker/dist/js/datepicker";
 import "./calendar.scss";
 
 export function calendar(){
+    
     $(".calendar__date-input").datepicker({
         multipleDates: 2,
         clearButton: true,
+        inline:true,
         navTitles: {
             days: 'MM yyyy'
         },
@@ -33,15 +35,17 @@ export function calendar(){
             
         }
     });
+    
     let myDatepicker = $('.calendar__date-input').datepicker().data('datepicker');
     $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
 
     $(".datepicker--button").click(function(){
         $(".arrive-block__arrive-date").val("ДД.ММ.ГГГГ");
         $(".arrive-block__exit-date").val("ДД.ММ.ГГГГ");
-    })
+    });
 
     $(".date-picker__button-accept").click(function(){
         myDatepicker.hide();
-    })
+    });
+
 }

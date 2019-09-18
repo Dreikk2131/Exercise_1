@@ -22,6 +22,7 @@ $text-color:#8f8fa0;
 .reserve__hedder{
     @include space-between();
     margin-bottom: 20px;
+    margin-top:6px;
 }
 
 @mixin number-room {
@@ -36,12 +37,12 @@ $text-color:#8f8fa0;
 
 .reserve__number{
     @include number-room();
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .reserve__room-number{
     @include number-room();
-    font-size: 16px;
+    font-size: 26px;
 }
 
 @mixin small-size-text {
@@ -65,7 +66,7 @@ $text-color:#8f8fa0;
 
 @mixin big-size-text {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 18px;
     font-weight: bold;
     margin:0px;
@@ -165,6 +166,7 @@ $text-color:#8f8fa0;
     margin-top:30px;
     display:flex;
     align-items: flex-end;
+    padding-bottom: 25px;
 }
 
 .reserve__total{
@@ -184,3 +186,5 @@ $text-color:#8f8fa0;
 .reserve__total-sum{
     @include footer-text();
 }
+
+

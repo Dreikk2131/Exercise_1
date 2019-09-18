@@ -39,6 +39,7 @@ font-face {
 
 .find-hotel-number__guest{
     padding-top:20px;
+    padding-bottom: 31px;
 }
 
 .find-hotel-number__guest-amount{
@@ -55,16 +56,4 @@ font-face {
     
 }
 
-.find-hotel-number__button{
-    display: block;
-    width: 320px;
-    height: 44px;
-    margin-top:31px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 22px;
-    color:#fff;
-    border:none;
-    text-transform: uppercase;
-    font-weight: 750;
-    outline: none;
-}
+
