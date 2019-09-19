@@ -1,5 +1,98 @@
-.main-menu__logo{
+$list-color:rgba(31, 32, 65, 0.5);
+
+.main-menu{
+    font-family:'Montserrat-Regular';
+    width:100%;
+    border:1px solid black;
+    padding-left:10%;
+    padding-right:10%;
+    height:70px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.main-menu__brand{
+    width: 110px;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-menu__logo-border-gradient{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    padding:2px;
     width: 40px;
     height: 40px;
-    border:2px solid linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); 
+    border-radius: 50%;
+    display: inline-block;
 }
+
+.main-menu__logo{
+    background: #fff;
+    width:100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.main-menu__logo::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-image: url(./img/Vector.svg);
+    position:absolute;
+    top:14px;
+    left:9px;
+}
+
+.main-menu__logo::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background-image: url(./img/Vector2.svg);
+    position:absolute;
+    top:14px;
+    right:9px;
+}
+
+.main-menu__label{
+    background-image: url(./img/TOXIN.svg);
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 13px;
+    display: inline-block;
+}
+
+.main-menu__list-and-buttons{
+    display: inline-block;
+}
+
+.main-menu__list{
+    display: inline-flex;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color:$list-color;
+}
+
+.main-menu__list-arrow{
+    display: inline-block;
+    width:6px;
+    height: 6px;
+    border-bottom:2px solid $list-color;
+    border-right: 2px solid $list-color;
+    transform: rotate(45deg);
+    margin-left: 6px;
+    margin-bottom: 2px;
+}
+
+.main-menu__list-item-text {
+    display: inline-block;
+    margin:0px;
+}
+
