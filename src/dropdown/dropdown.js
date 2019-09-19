@@ -110,4 +110,18 @@ export function dropdown(){
         $(".dropdown__field-types-people").attr("hidden", "true");
     })
 
+//Появление и исчезновение кнопки "очистить"
+    $(".dropdown__operations_plus").click(function(){
+        $(".dropdown__button-clear").addClass("dropdown__button-visible");
+    });
+    $(".dropdown__operations_minus").click(function(){
+        let sumPeople=0;
+        sumPeople = amount.people + amount.children + amount.baby;
+        if(sumPeople==0){
+            $(".dropdown__button-clear").removeClass("dropdown__button-visible");
+        }
+    })
+    $(".dropdown__button-clear").click(function(){
+        $(".dropdown__button-clear").removeClass("dropdown__button-visible");
+    })
 }

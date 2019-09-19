@@ -5,5 +5,5 @@ article.find-hotel-number
     div.find-hotel-number__guest
         p.find-hotel-number__arrive-article Гости
         include ../dropdown/dropdown.pug
-    div.button-block
-        button.button-block__view-button Подобрать номер
+    include ../buttons/button.pug
+    +button-color("Подобрать номер")

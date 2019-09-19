@@ -123,7 +123,20 @@ font-face {
     color:$disable-color;
 }
 
+.dropdown__buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
 .dropdown__button-clear{
+    opacity: 0;
+}
+
+.dropdown__button-clear:hover{
+    color: #BC9CFF;
+}
+
+.dropdown__button-visible{
     @include style-text;
     @include style-button;
     width: 72px;
@@ -131,6 +144,8 @@ font-face {
     color: rgba(31, 32, 65, 0.5);
     margin-left: 10px;
     margin-top:15px;
+    opacity: 1;
+    padding-left:5px;
 }
 
 .dropdown__button-apply{
@@ -138,9 +153,12 @@ font-face {
     @include style-text;
     width: 84px;
     height: 15px;
-    color: #BC9CFF;
-    margin-left: 142px;
+    color: rgba(31, 32, 65, 0.5);
     margin-top:15px;
+}
+
+.dropdown__button-apply:hover{
+    color: #BC9CFF;
 }
 
 .dropdown__button, 

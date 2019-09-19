@@ -13,5 +13,6 @@ div.dropdown
         +dropdown("Взрослые")(class="people")
         +dropdown("Дети")(class="children")
         +dropdown("Младенцы")(class="baby")
-        button.dropdown__button-clear.dropdown__button Очистить 
-        button.dropdown__button-apply.dropdown__button Применить
+        div.dropdown__buttons
+            input(type="text" value="Очистить").dropdown__button-clear.dropdown__button
+            input(type="text" value="Применить").dropdown__button-apply.dropdown__button 

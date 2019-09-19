@@ -1,0 +1,106 @@
+/*Для отображения кнопки со стрелкой необходимо создать 2 вложенных друг в друга div c классами .button-color
+и .button-color__arrow. и в них создать input.button-color__view-button
+*/
+.button-color{
+    opacity: 0.5;
+}
+
+.button-color:hover{
+    opacity: 1;
+}
+
+.button-color__arrow{
+    position: relative;
+}
+
+.button-color__arrow::before{
+    content: "";
+    display:block;
+    height:8px;
+    width:8px;
+    transform:rotate(45deg);
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    top:16px;
+    right: 14px;
+    position:absolute;
+}
+
+.button-color__arrow::after{
+    content: "";
+    display:block;
+    height:12px;
+    width:12px;
+    border-top: 2px solid #fff;
+    top:20px;
+    right:14px;
+    position:absolute;
+}
+
+.button-color__view-button{
+    display: block;
+    width: 320px;
+    height: 44px;
+    border-radius: 22px;
+    color:#fff;
+    border:none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 750;
+    outline: none;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);    
+}
+
+/*Для создания белой кнопки, необходимо создать <div.button-white>, и в нем <p.button-white__text> с названием кнопи и <div.button-white__border>
+и в этом div создать <input.button-white__input>
+*/
+
+
+.button-white {
+    display: inline-block;
+    opacity: 1;
+    position: relative;
+}
+
+.button-white__text{
+    display: block;
+    margin:0px;
+    color:#BC9CFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 750;
+    position: absolute;
+    top:12px;
+    left:14px;
+    z-index: 2;
+}
+
+.button-white__border{
+    display: block;
+    width: 87px;
+    height: 34px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    padding:2px;
+    opacity: 0.5;
+}
+
+.button-white__border:hover{
+    opacity: 1;
+}
+
+.button-white__input{
+    display: block;
+    border:none;
+    border-radius: 22px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color:#BC9CFF;
+    text-transform: uppercase;
+    font-weight: 750;
+    outline: none;
+    opacity: 1;
+}
+

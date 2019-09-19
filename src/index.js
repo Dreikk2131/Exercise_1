@@ -1,5 +1,6 @@
 import _ from "lodash";
 import "./style.scss";
+import "./buttons/button.scss";
 
 
 import {calendar} from "./calendar/calendar";
@@ -13,6 +14,7 @@ $(document).ready(function(){
     calendar();
     dropdown();
     arriveBlock();
+
 })
 
 
