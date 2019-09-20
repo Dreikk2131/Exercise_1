@@ -1,13 +1,6 @@
 $main-color: #BC9CFF;
 $text-color:rgba(31, 32, 65, 0.75);
 
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src:  url('../fonts/Montserrat-Regular.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
 .calendar__date-input{
     position: absolute;
     left:1px;
@@ -16,6 +9,7 @@ $text-color:rgba(31, 32, 65, 0.75);
 }
 
 .datepicker{
+    font-family:'Montserrat-Regular';
     width: 320px;
     height: 369px;
     border:1px solid rgba(31, 32, 65, 0.25);
@@ -76,16 +70,36 @@ $text-color:rgba(31, 32, 65, 0.75);
     background-position: center;
 }
 
-.datepicker--cell-day.-selected-{
-    @include circle();
+@mixin background {
+    &.first-date{
+        background-image: url(Rectangle2.png), linear-gradient(to right, #fff 0%, #ece6ff 100%);
+        background-size: 30px 30px, auto;
+        background-repeat: no-repeat;
+        background-position: center, right;
+    }
+    &.second-date{
+        background-image: url(Rectangle2.png), linear-gradient(to left, #fff 0%, #ece6ff 100%);
+        background-size: 30px 30px, auto;
+        background-repeat: no-repeat;
+        background-position: center, center;
+    }
 }
 
-.datepicker--cell-day.-focus-{
-    @include circle();
-}
-
-.datepicker--cell-day.-focus-.-selected-{
-    @include circle();
+.datepicker--cell-day{
+    border-radius: 0px;
+    &.-selected-{
+        @include circle();
+        @include background();
+    }
+    &.-focus-{
+        @include circle();
+        @include background();
+        
+    }
+    &.-focus-.-selected-{
+        @include circle();
+        @include background();
+    }
 }
 
 .datepicker--button{
@@ -108,11 +122,10 @@ $text-color:rgba(31, 32, 65, 0.75);
     color: rgba(31, 32, 65, 0.5);
     margin-top: 10px;
     margin-left: 20px;
-}
-
-.datepicker--button:hover{
-    color:$main-color;
-    background: none;
+    &:hover{
+        color:$main-color;
+        background: none;
+    }
 }
 
 .date-picker__button-accept{
@@ -132,10 +145,9 @@ $text-color:rgba(31, 32, 65, 0.75);
     height: 15px;
     margin-top:7px;
     margin-right: 10px;
-}
-
-.date-picker__button-accept:hover{
-    color:$main-color;
+    &:hover{
+        color:$main-color;
+    }
 }
 
 @mixin arrow{
@@ -166,18 +178,16 @@ $text-color:rgba(31, 32, 65, 0.75);
     @include arrow;
     border-bottom:none;
     border-left:none;
-}
-
-.datepicker__arrow-next::before{
-    @include arrow-before;
+    &::before{
+        @include arrow-before;
+    }
 }
 
 .datepicker__arrow-prev{
     @include arrow;
     border-top:none;
     border-right: none;
-}
-
-.datepicker__arrow-prev::before{
-    @include arrow-before;
+    &::before{
+        @include arrow-before;
+    }
 }

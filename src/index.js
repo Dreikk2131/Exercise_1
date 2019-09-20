@@ -14,7 +14,12 @@ $(document).ready(function(){
     calendar();
     dropdown();
     arriveBlock();
-
+    $(".class").click(function(){
+        alert("class");
+    })
+    $(".bar.foo").click(function(){
+        alert("bar");
+    })
 })
 
 

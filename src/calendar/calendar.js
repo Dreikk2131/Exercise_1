@@ -41,6 +41,7 @@ export function calendar(){
     });
     //Доступ к экземпляру плагина
     let myDatepicker = $('.calendar__date-input').datepicker().data('datepicker');
+    let firstDate = [];
 
     //Вставка кнопки "Применить"
     $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
@@ -57,4 +58,20 @@ export function calendar(){
     
     });
 
+    
+
+    $(".datepicker--days.datepicker--body").click(function(){
+        let i = $(".datepicker--cell.datepicker--cell-day.-selected-");
+        if(i.length == 2){
+            let nextEl = $(i[0]).next();
+            $(i[0]).addClass("first-date");
+            $(i[1]).addClass("second-date");
+            while(nextEl.hasClass("-selected-")==false){
+                nextEl.css("background","#ece6ff");
+                nextEl = nextEl.next();
+
+            }
+        }
+
+    })
 }

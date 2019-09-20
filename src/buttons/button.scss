@@ -3,38 +3,35 @@
 */
 .button-color{
     opacity: 0.5;
-}
-
-.button-color:hover{
-    opacity: 1;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .button-color__arrow{
     position: relative;
-}
-
-.button-color__arrow::before{
-    content: "";
-    display:block;
-    height:8px;
-    width:8px;
-    transform:rotate(45deg);
-    border-right: 2px solid #fff;
-    border-top: 2px solid #fff;
-    top:16px;
-    right: 14px;
-    position:absolute;
-}
-
-.button-color__arrow::after{
-    content: "";
-    display:block;
-    height:12px;
-    width:12px;
-    border-top: 2px solid #fff;
-    top:20px;
-    right:14px;
-    position:absolute;
+    &::before{
+        content: "";
+        display:block;
+        height:8px;
+        width:8px;
+        transform:rotate(45deg);
+        border-right: 2px solid #fff;
+        border-top: 2px solid #fff;
+        top:16px;
+        right: 14px;
+        position:absolute;
+    }
+    &::after{
+        content: "";
+        display:block;
+        height:12px;
+        width:12px;
+        border-top: 2px solid #fff;
+        top:20px;
+        right:14px;
+        position:absolute;
+    }
 }
 
 .button-color__view-button{
@@ -84,10 +81,9 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     padding:2px;
     opacity: 0.5;
-}
-
-.button-white__border:hover{
-    opacity: 1;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .button-white__input{

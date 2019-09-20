@@ -1,13 +1,7 @@
 $text-color: #1F2041;
 $border-color:rgba(31, 32, 65, 0.5);
 $disable-color:rgba(31, 32, 65, 0.20);
-
-font-face {
-    font-family: 'Montserrat', sans-serif;
-    src:  url('../fonts/Montserrat-Regular.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
+$button-color:#BC9CFF;
 
 @mixin style-text {
     font: {
@@ -24,11 +18,11 @@ font-face {
     background-color: #ffffff;
     border: none;
     padding: 0px;
-    font-weight: bold;
 }
 
 .dropdown{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-Regular';
+    font-style: normal;
     position: relative;
 }
 
@@ -94,7 +88,6 @@ font-face {
     width: 83px;
     margin-left: 13px;
     color: $text-color;
-    font-weight:800;
     margin-bottom: 4px;
 }
 
@@ -130,10 +123,12 @@ font-face {
 
 .dropdown__button-clear{
     opacity: 0;
-}
-
-.dropdown__button-clear:hover{
-    color: #BC9CFF;
+    &:hover{
+        color: $button-color;
+    }
+    &:active,&:focus{
+        outline: none;
+    }
 }
 
 .dropdown__button-visible{
@@ -141,7 +136,7 @@ font-face {
     @include style-button;
     width: 72px;
     height: 15px;
-    color: rgba(31, 32, 65, 0.5);
+    color: $border-color;
     margin-left: 10px;
     margin-top:15px;
     opacity: 1;
@@ -153,18 +148,15 @@ font-face {
     @include style-text;
     width: 84px;
     height: 15px;
-    color: rgba(31, 32, 65, 0.5);
+    color: $border-color;
     margin-top:15px;
+    &:hover{
+        color: $button-color;
+    }
+    &:active,&:focus{
+        outline: none;
+    }
 }
 
-.dropdown__button-apply:hover{
-    color: #BC9CFF;
-}
-
-.dropdown__button, 
-.dropdown__button:active, 
-.dropdown__button:focus {
-    outline: none;
-}
 
 
