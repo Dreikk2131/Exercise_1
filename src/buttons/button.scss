@@ -1,6 +1,4 @@
-/*Для отображения кнопки со стрелкой необходимо создать 2 вложенных друг в друга div c классами .button-color
-и .button-color__arrow. и в них создать input.button-color__view-button
-*/
+//Цветная кнопка со стрелкой
 .button-color{
     opacity: 0.5;
     &:hover{
@@ -43,16 +41,13 @@
     border:none;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 750;
+    font-weight: bold;
     outline: none;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);    
 }
 
-/*Для создания белой кнопки, необходимо создать <div.button-white>, и в нем <p.button-white__text> с названием кнопи и <div.button-white__border>
-и в этом div создать <input.button-white__input>
-*/
 
-
+//Белая кнопка
 .button-white {
     display: inline-block;
     opacity: 1;
@@ -71,6 +66,7 @@
     top:12px;
     left:14px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .button-white__border{

@@ -1,11 +1,15 @@
-mixin button-color(value)
+mixin button-color-arrow(value,className)
     div.button-color
             div.button-color__arrow
-                input(type="button" value=value).button-color__view-button
+                input(type="button" value=value class = className).button-color__view-button 
 
-mixin button-white(value)
+mixin button-white(value, classInput, classText)
     div.button-white 
-            p.button-white__text #{value}
+            p(class = classText).button-white__text #{value}
             div.button-white__border
-                input(type="button").button-white__input
+                input(type="button" class = classInput).button-white__input
 
+
+mixin button-color(value,className)
+    div.button-color
+        input(type="button" value=value class = className).button-color__view-button 

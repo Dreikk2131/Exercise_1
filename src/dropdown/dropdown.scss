@@ -24,6 +24,7 @@ $button-color:#BC9CFF;
     font-family: 'Montserrat-Regular';
     font-style: normal;
     position: relative;
+    background-color: #fff;
 }
 
 .dropdown__article{
@@ -73,6 +74,7 @@ $button-color:#BC9CFF;
     padding-right: 5px;
     box-sizing: border-box;
     position: absolute;
+    z-index: 1;
 }
 
 .dropdown__choose-num-guest{

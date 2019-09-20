@@ -16,5 +16,8 @@ header.main-menu
                 p.main-menu__list-item-text Соглашения
                 span.main-menu__list-arrow
         div.main-menu__buttons
+            include ../buttons/button.pug 
+            +button-white("Войти", "main-menu__enter-style", "main-menu__text-button-style")
+            +button-color("Зарегестрироваться", "main-menu__signin-style")
             
     
