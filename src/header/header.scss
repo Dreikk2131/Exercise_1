@@ -1,9 +1,11 @@
 $list-color:rgba(31, 32, 65, 0.5);
+$border-color:#BC9CFF;
 
 .main-menu{
     font-family:'Montserrat-Regular';
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width:100%;
     border:1px solid black;
     padding-left:10%;
@@ -11,7 +13,7 @@ $list-color:rgba(31, 32, 65, 0.5);
     height:70px;
     box-sizing: border-box;
     background: #fff;
-    @media screen and (max-width: 950px){
+    @media screen and (max-width: 980px){
         padding-left:0px;
         padding-right:0px;  
     }
@@ -26,7 +28,7 @@ $list-color:rgba(31, 32, 65, 0.5);
 }
 
 .main-menu__logo-border-gradient{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, $border-color 0%, #8BA4F9 100%);
     padding:2px;
     width: 40px;
     height: 40px;
@@ -76,13 +78,16 @@ $list-color:rgba(31, 32, 65, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:760px;
+    position: relative;
+    @media screen and (max-width:  640px){
+        width:55%;
+    }
 }
 
 .main-menu__list{
     display: flex;
     justify-content: space-between;
-    width: 58.7%;
+    width: 455px;
     margin:0px;
     padding:0px;
     list-style-type: none;
@@ -92,6 +97,24 @@ $list-color:rgba(31, 32, 65, 0.5);
     line-height: 17px;
     color:$list-color;
     padding-right: 20px;
+    background-color: #fff;
+    @media screen and (max-width: 640px){
+        display: none;
+        &.main-menu__list-display{
+            display: inline-flex;
+            width:140px;
+            height: 180px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            top:50px;
+            left:-50px;
+            font-size: 18px;
+            line-height: 20px;
+            border:2px solid $border-color;
+        }
+    }
 }
 
 .main-menu__list-arrow{
@@ -110,15 +133,99 @@ $list-color:rgba(31, 32, 65, 0.5);
     margin:0px;
 }
 
+.main-menu__burger-background{
+    @media screen and (max-width:  640px){
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(180deg, $border-color 0%, #8BA4F9 100%);
+        border-radius: 6px;
+        padding:3px;
+    }
+}
+
+.main-menu__burger{
+    @media screen and (max-width:  640px){
+        display: block;
+        background-color: #fff;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        pointer-events: none;
+    }
+}
+
+@mixin burger-line {
+    display: block;
+    position: absolute;
+    border-top:2px solid $border-color;
+    width:30px;
+    left:5px;
+    pointer-events: none;
+}
+
+.main-menu__burger-line1{
+    @media screen and (max-width: 640px){
+        @include burger-line(); 
+        top:8px;
+    } 
+}
+
+.main-menu__burger-line2{
+    @media screen and (max-width: 640px){
+        @include burger-line();
+        top:18px;
+    }
+    
+}
+
+.main-menu__burger-line3{
+    @media screen and (max-width: 640px){
+        @include burger-line();
+        top:28px;
+    }
+    
+}
+
+.main-menu__media-button{
+    display: block;
+    background-image: url(./img/icons8-войти-50.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    @media screen and (min-width: 980px){
+        display: none;
+    }
+}
+
 .main-menu__buttons{
     display: flex;
     justify-content: space-between;
     width: 41.2%;
+    @media screen and (max-width: 980px){
+        display: none;
+        &.main-menu__buttons-display{
+            width:200px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: absolute;
+            top:50px;
+            right:0px;
+            background-color: #fff;
+        }
+        
+    }
 }
 
 .main-menu__enter-style{
     width: 87px;
     height: 34px;
+    z-index: 1;
 }
 
 .main-menu__signin-style{

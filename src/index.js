@@ -8,12 +8,13 @@ import { dropdown } from "./dropdown/dropdown";
 import "./find-hotel-number/find-hotel-number";
 import {arriveBlock} from "./arrive-block/arrive-block";
 import "./reserve/reserve";
-import "./header/header";
+import {header} from "./header/header";
 import "./first-page/first-page";
 
 $(document).ready(function(){
     calendar();
     dropdown();
+    header();
     arriveBlock();
 })
 

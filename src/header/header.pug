@@ -14,10 +14,17 @@ header.main-menu
             li.main-menu__list-item Новости
             li.main-menu__list-item 
                 p.main-menu__list-item-text Соглашения
-                span.main-menu__list-arrow
+                span.main-menu__list-arrow 
+        div.main-menu__burger-background
+            div.main-menu__burger 
+                span.main-menu__burger-line1
+                span.main-menu__burger-line2
+                span.main-menu__burger-line3
+        span.main-menu__media-button
         div.main-menu__buttons
             include ../buttons/button.pug 
             +button-white("Войти", "main-menu__enter-style", "main-menu__text-button-style")
             +button-color("Зарегестрироваться", "main-menu__signin-style")
+    
             
     
