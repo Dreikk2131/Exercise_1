@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
 var webpack = require('webpack');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const common = merge([{
   entry: './src/index.js',
@@ -20,7 +21,7 @@ const common = merge([{
       template: './src/index.pug',
       title: 'Output Management',
       fixAssets: true
-    })
+    }),
     
   ],
   module: {

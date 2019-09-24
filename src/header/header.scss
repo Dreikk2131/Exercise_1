@@ -113,6 +113,7 @@ $border-color:#BC9CFF;
             font-size: 18px;
             line-height: 20px;
             border:2px solid $border-color;
+            z-index: 1;
         }
     }
 }
@@ -131,6 +132,11 @@ $border-color:#BC9CFF;
 .main-menu__list-item-text {
     display: inline-block;
     margin:0px;
+}
+
+.main-menu__list-link{
+    color:$list-color;
+    text-decoration: none; 
 }
 
 .main-menu__burger-background{

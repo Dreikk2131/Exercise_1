@@ -5,6 +5,9 @@
     background-image: url(./img/image1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top:70px;
-    padding-left:140px;
+    padding-top:5%;
+    padding-left:9%;
+    @media screen and (max-width: 640px){
+        padding-left:0px;
+    }
 }

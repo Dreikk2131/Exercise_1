@@ -10,6 +10,7 @@ import {arriveBlock} from "./arrive-block/arrive-block";
 import "./reserve/reserve";
 import {header} from "./header/header";
 import "./first-page/first-page";
+import "./footer/footer";
 
 $(document).ready(function(){
     calendar();
