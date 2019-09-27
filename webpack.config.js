@@ -22,6 +22,10 @@ const common = merge([{
       title: 'Output Management',
       fixAssets: true
     }),
+    new StyleLintPlugin({
+      context: 'src',
+      files: ['**/*.scss'],
+    })
     
   ],
   module: {

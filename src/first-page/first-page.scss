@@ -2,9 +2,11 @@
     display: block;
     max-height: 840px;
     height: 100%;
-    background-image: url(./img/image1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: {
+        image: url(./img/image1.jpg);
+        repeat: no-repeat;
+        size: cover;
+    }
     padding-top:5%;
     padding-left:9%;
     @media screen and (max-width: 640px){
