@@ -1,23 +1,41 @@
 $title-color:#1F2041;
 $text-color:rgba(31, 32, 65, 0.75);
 $nav-color:rgba(31, 32, 65, 0.5);
+$email-color:rgba(31, 32, 65, 0.25);
 
-.footer {
+.footer{
     font: {
         family:'Montserrat-Regular';
         style: normal;
         weight: normal;
         size: 14px;
     }
+}
+
+@mixin footer-style {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width:100%;
-    height:372px;
-    border:1px solid black;
-    padding:100px 10%;
+    padding-left:10%;
+    padding-right: 10%;
     box-sizing: border-box;
     background: #fff;
+    @media screen and (max-width:1000px) {
+        padding-left:10px;
+        padding-right: 10px;
+    }
+    @media screen and (max-width:850px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.footer__top {
+    padding-top:100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #d1d1d4;
+    @include footer-style();
 }
 
 .footer__label-and-text {
@@ -25,6 +43,12 @@ $nav-color:rgba(31, 32, 65, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width:850px) {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
 }
 
 .footer__label-and-text  .main-menu__brand{
@@ -43,18 +67,24 @@ $nav-color:rgba(31, 32, 65, 0.5);
 }
 
 @mixin nav-block {
-    height: 100%;
+    height: 168px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @media screen and (max-width:850px) {
+        width: 100%;
+        align-items: center;
+    }
 }
 
 
-@each $var in __nav, __about-us, __service {
+@each $var in __nav, __about-us, __service, __subscription {
     .footer#{$var} {
         @include nav-block();
     }
 }
+
+
 
 .footer__list{
     padding: 0px;
@@ -63,8 +93,107 @@ $nav-color:rgba(31, 32, 65, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width:850px) {
+        align-content: center;
+    }
+}
+
+.footer__list-item{
+    @media screen and (max-width:850px){
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    
+}
+
+.footer__list-designed{
+    justify-content: start;
+}
+
+.footer__list-item-designed{
+    margin-bottom: 16px;
 }
 
 h2 {
     margin:0px;
+}
+
+.footer__subscription-text{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer__subscription-email{
+    width: 260px;
+    height: 44px;
+    border: 1px solid $email-color;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    &::before{
+        content: "";
+        display:block;
+        height:8px;
+        width:8px;
+        transform:rotate(45deg);
+        border-right: 2px solid rgb(169,159,253);
+        border-top: 2px solid rgb(169,159,253);
+        position:absolute;
+        top:16px;
+        right: 14px;
+    }
+    &::after{
+        content: "";
+        display:block;
+        height:12px;
+        width:12px;
+        border-top: 2px solid rgb(169,159,253);
+        top:20px;
+        right:14px;
+        position:absolute;
+    }
+}
+.footer__subscription-input{
+    width: 258px;
+    height: 42px;
+    box-sizing: border-box;
+    border:none;
+    background: none;
+    padding-left: 15px;
+    color:$email-color;
+}
+
+@mixin nav-designed {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color:#1F2041;
+}
+
+@each $var in nav-title, about-us-title, service-title, subscription-title  {
+    .footer__#{$var} {
+        @include nav-designed();
+    }
+}
+
+.footer__list-item-link{
+    color:$nav-color;
+    text-decoration: none;
+}
+
+.footer__bottom{
+    @include footer-style();
+    height: 70px;
+}
+
+.footer__copyright{
+    color:$text-color;
+}
+
+.footer__social-networks{
+    width: 115px;
+    display: flex;
+    justify-content: space-between;
 }

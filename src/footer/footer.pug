@@ -1,33 +1,56 @@
 footer.footer
-    div.footer__label-and-text
-        div.main-menu__brand
-            div.main-menu__logo-border-gradient
-                div.main-menu__logo 
-                    span.main-menu__logo-symbol
-            div.main-menu__label
-        p.footer__text.footer__text-indent Бронирование номеров в лучшем отеле 2019 года по версии ассоциации "Отельные взгляды"
-    nav.footer__nav
-        h2.footer__nav-title Навигация
-        ul.footer__list
-            li.footer__list-item О нас
-            li.footer__list-item Новости
-            li.footer__list-item Служба поддержки
-            li.footer__list-item Услуги
-    nav.footer__about-us 
-        h2.footer__about-us-title О нас
-        ul.footer__list
-            li.footer__list-item О сервисе
-            li.footer__list-item Наша компания
-            li.footer__list-item Вакансии
-            li.footer__list-item Инвесторы
-    nav.footer__service
-        h2.footer__service Служба поддержки
-        ul.footer__list
-            li.footer__list-item Соглашения
-            li.footer__list-item Сообщества
-            li.footer__list-item Связь с нами
-    div.footer__subscription
-        h2.footer__subscription-title Подписка
-        p.footer__text Получайте специальные предложения и новости сервиса
-        div.footer__subscription-email
-            input(type="email").footer__subscription-input
+    div.footer__top
+        div.footer__label-and-text
+            div.main-menu__brand
+                div.main-menu__logo-border-gradient
+                    div.main-menu__logo 
+                        span.main-menu__logo-symbol
+                div.main-menu__label
+            p.footer__text.footer__text-indent Бронирование номеров в лучшем отеле 2019 года по версии ассоциации "Отельные взгляды"
+        nav.footer__nav
+            h2.footer__nav-title Навигация
+            ul.footer__list
+                li.footer__list-item
+                    a(href="#").footer__list-item-link О нас
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Новости
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Служба поддержки
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Услуги
+        nav.footer__about-us 
+            h2.footer__about-us-title О нас
+            ul.footer__list 
+                li.footer__list-item
+                    a(href="#").footer__list-item-link О сервисе
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Наша компания
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Вакансии
+                li.footer__list-item
+                    a(href="#").footer__list-item-link Инвесторы
+        nav.footer__service
+            h2.footer__service-title Служба поддержки
+            ul.footer__list.footer__list-designed
+                li.footer__list-item.footer__list-item-designed
+                    a(href="#").footer__list-item-link Соглашения
+                li.footer__list-item.footer__list-item-designed
+                    a(href="#").footer__list-item-link Сообщества
+                li.footer__list-item.footer__list-item-designed
+                    a(href="#").footer__list-item-link Связь с нами
+        div.footer__subscription
+            h2.footer__subscription-title Подписка
+            div.footer__list.footer__list-designed
+                p.footer__text.footer__subscription-text Получайте специальные предложения и новости сервиса
+                div.footer__subscription-email
+                    input(type="email" value="Email").footer__subscription-input
+    div.footer__bottom
+        p.footer__copyright Copyright &copy; 2018 Toxin отель. Все права защищены.
+        div.footer__social-networks
+            a(href="#")
+                img(src=require("./img/twitter.svg") alt="img")
+            a(href="#")
+                img(src=require("./img/facebook.svg") alt="img")
+            a(href="#")
+                img(src=require("./img/instagram.svg") alt="img")
+
