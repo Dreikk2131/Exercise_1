@@ -3,7 +3,8 @@ import "./style.scss";
 import "./buttons/button.scss";
 
 
-import {calendar} from "./calendar/calendar";
+import {calendarTwoField} from "./calendar/calendarTwoField";
+import {calendarOneField} from "./calendar/calendarOneField";
 import { dropdown } from "./dropdown/dropdown";
 import "./find-hotel-number/find-hotel-number";
 import {arriveBlock} from "./arrive-block/arrive-block";
@@ -13,7 +14,8 @@ import "./first-page/first-page";
 import "./footer/footer";
 
 $(document).ready(function(){
-    calendar();
+    calendarTwoField();
+    calendarOneField();
     dropdown();
     header();
     arriveBlock();

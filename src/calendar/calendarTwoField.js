@@ -1,9 +1,8 @@
 import "../../node_modules/air-datepicker/dist/css/datepicker.min.css";
-import "../../node_modules/air-datepicker/dist/js/datepicker";
+import "air-datepicker/dist/js/datepicker";
 import "./calendar.scss";
 
-export function calendar(){
-    //Инициализация календаря на скрытом элементе
+export function calendarTwoField(){
     $(".calendar__date-input").datepicker({
         multipleDates: 2,
         clearButton: true,
@@ -41,7 +40,6 @@ export function calendar(){
     });
     //Доступ к экземпляру плагина
     let myDatepicker = $('.calendar__date-input').datepicker().data('datepicker');
-    let firstDate = [];
 
     //Вставка кнопки "Применить"
     $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
@@ -59,7 +57,7 @@ export function calendar(){
     });
 
     
-
+    //Установка background выбранному периоду дат
     $(".datepicker--days.datepicker--body").click(function(){
         let i = $(".datepicker--cell.datepicker--cell-day.-selected-");
         if(i.length == 2){

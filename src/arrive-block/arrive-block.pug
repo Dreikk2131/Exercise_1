@@ -5,6 +5,7 @@ div.arrive-block
                 input(type='text' value="ДД.ММ.ГГГГ" class="arrive-block__arrive-date arrive-block__arrive-date_margin" )
                 label.arrive-block__arrow(for="date")
                 include ../calendar/calendar.pug
+                +two-field()
         div.arrive-block__main-content.arrive-block__main-content_margin
             p.arrive-block__arrive-article Выезд
             div.arrive-block__input-block
