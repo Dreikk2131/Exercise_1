@@ -1,18 +1,40 @@
-div.dropdown
-    div.dropdown__article
-        p.dropdown__common-num-people Сколько гостей
-        div.dropdown__arrow 
-    mixin dropdown(typePeople)
-        div.dropdown__choose-num-guest
-            p.dropdown__type-people=typePeople
-            div.dropdown__operations-block
-                button.dropdown__operations.dropdown__operations_minus(class=attributes.class) -
-                span.dropdown__value(class=attributes.class)
-                button.dropdown__operations.dropdown__operations_plus(class=attributes.class) +
-    div.dropdown__field-types-people(hidden ='true')
-        +dropdown("Взрослые")(class="people")
-        +dropdown("Дети")(class="children")
-        +dropdown("Младенцы")(class="baby")
-        div.dropdown__buttons
-            input(type="text" value="Очистить").dropdown__button-clear
-            input(type="text" value="Применить").dropdown__button-apply
+mixin guests
+    div.dropdown
+        div.dropdown__article
+            p.dropdown__common-num-people Сколько гостей
+            div.dropdown__arrow 
+        mixin dropdown(typePeople)
+            div.dropdown__choose-num-guest
+                p.dropdown__type-people=typePeople
+                div.dropdown__operations-block
+                    button.dropdown__operations.dropdown__operations_minus(class=attributes.class) -
+                    span.dropdown__value(class=attributes.class)
+                    button.dropdown__operations.dropdown__operations_plus(class=attributes.class) +
+        div.dropdown__field-types-people(hidden ='true')
+            +dropdown("Взрослые")(class="first people")
+            +dropdown("Дети")(class="second children")
+            +dropdown("Младенцы")(class="third baby")
+            div.dropdown__buttons
+                input(type="text" value="Очистить").dropdown__button-clear
+                input(type="text" value="Применить").dropdown__button-apply
+
+
+mixin room
+    div.dropdown
+        div.dropdown__article
+            p.dropdown__common-num-people 
+            div.dropdown__arrow 
+        mixin dropdown(typePeople)
+            div.dropdown__choose-num-guest
+                p.dropdown__type-people=typePeople
+                div.dropdown__operations-block
+                    button.dropdown__operations.dropdown__operations_minus(class=attributes.class) -
+                    span.dropdown__value(class=attributes.class)
+                    button.dropdown__operations.dropdown__operations_plus(class=attributes.class) +
+        div.dropdown__field-types-people(hidden ='true')
+            +dropdown("Спальни")(class="first room")
+            +dropdown("Кровати")(class="second bed")
+            +dropdown("Ванные комнаты")(class="third bath-room")
+            div.dropdown__buttons
+                input(type="text" value="Очистить").dropdown__but-clear
+                input(type="text" value="Применить").dropdown__but-apply

@@ -20,7 +20,10 @@ export function calendarOneField(){
     let myDatepicker = $('.calendar__one-field').datepicker().data('datepicker');
 
     //Вставка кнопки "Применить"
-    $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
+    if($("input").hasClass("date-picker__button-accept")==false){
+        $(".datepicker--buttons").append("<input type = button value=Применить class= date-picker__button-accept />");
+    }
+    
     
     //Функционал кнопки "Очистить"
     $(".datepicker--button").click(function(){

@@ -1,6 +1,8 @@
 import "./arrive-block.scss";
+import {calendarTwoField} from "../calendar/calendarTwoField";
 
 export function arriveBlock(){
+    calendarTwoField();
     //Вызов календаря из инпутов "Прибытие" и "Выезд"
     let myDatepicker = $(".calendar__date-input").datepicker().data("datepicker");
     $(".arrive-block__exit-date").click(function(){

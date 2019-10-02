@@ -40,10 +40,15 @@ $button-color:#BC9CFF;
 
 .dropdown__common-num-people{
     display: inline-block;
+    width: 160px;
     padding-left:15px;
     padding-top:13px;
     color:$border-color;
     margin:0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 .dropdown__arrow{
@@ -86,7 +91,6 @@ $button-color:#BC9CFF;
     @include style-text;
     display: inline-block;
     box-sizing: border-box;
-    width: 83px;
     margin-left: 13px;
     color: $text-color;
     margin-bottom: 4px;
@@ -99,6 +103,9 @@ $button-color:#BC9CFF;
 }
 
 .dropdown__operations-block{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 5px;
 }
 
@@ -122,7 +129,7 @@ $button-color:#BC9CFF;
     justify-content: space-between;
 }
 
-.dropdown__button-clear{
+@mixin visibly {
     opacity: 0;
     &:hover{
         color: $button-color;
@@ -130,6 +137,15 @@ $button-color:#BC9CFF;
     &:active,&:focus{
         outline: none;
     }
+}
+
+
+.dropdown__button-clear{
+    @include visibly();
+}
+
+.dropdown__but-clear{
+    @include visibly();
 }
 
 .dropdown__button-visible{
@@ -144,7 +160,7 @@ $button-color:#BC9CFF;
     padding-left:5px;
 }
 
-.dropdown__button-apply{
+@mixin apply {
     @include style-button;
     @include style-text;
     width: 84px;
@@ -159,5 +175,17 @@ $button-color:#BC9CFF;
     }
 }
 
+.dropdown__but-apply{
+    @include apply();
+}
+
+.dropdown__button-apply{
+    @include apply();
+}
+
+.dropdown__type-room{
+    text-overflow: ellipsis;
+    display: inline-block;
+}
 
 

@@ -2,16 +2,16 @@ import './dropdown.scss'
 
 export function dropdown(){
     let amount = {
-        people:0,
-        children:0,
-        baby:0
+        first:0,
+        second:0,
+        third:0
     }
 
     let amountOver = 0;
 
-    $(".dropdown__value.people").text(amount.people);
-    $(".dropdown__value.children").text(amount.children);
-    $(".dropdown__value.baby").text(amount.baby);
+    $(".dropdown__value.first").text(amount.first);
+    $(".dropdown__value.second").text(amount.second);
+    $(".dropdown__value.third").text(amount.third);
 
     $(".dropdown__operations_minus").attr("disabled", "disabled");
 
@@ -32,53 +32,67 @@ export function dropdown(){
     }
 
     //Увеличение количества взрослых
-    $(".dropdown__operations_minus.people").click(function(){
-        minus("people");
+    $(".dropdown__operations_minus.first").click(function(){
+        minus("first");
         
     })
 
     //Увеличение количества взрослых
-    $(".dropdown__operations_plus.people").click(function(){
-        plus("people");
+    $(".dropdown__operations_plus.first").click(function(){
+        plus("first");
         
     })
 
     //Увеличение количества детей
-    $(".dropdown__operations_minus.children").click(function(){
-        minus("children");
+    $(".dropdown__operations_minus.second").click(function(){
+        minus("second");
     })
 
     //Увеличение количества детей
-    $(".dropdown__operations_plus.children").click(function(){
-        plus("children");
+    $(".dropdown__operations_plus.second").click(function(){
+        plus("second");
     })
 
     //Увеличение количества малышей
-    $(".dropdown__operations_minus.baby").click(function(){
-        minus("baby");
+    $(".dropdown__operations_minus.third").click(function(){
+        minus("third");
     })
 
     //Увеличение количества малышей
-    $(".dropdown__operations_plus.baby").click(function(){
-        plus("baby");
+    $(".dropdown__operations_plus.third").click(function(){
+        plus("third");
     })
 
+
+
+//Кнопки гостевого dropdown
+
+    //Появление блока выбора номеров или людей
+    $(".dropdown__article").click(function(){
+        let hidden = $(".dropdown__field-types-people").attr("hidden");
+        if(hidden == "hidden"){
+            $(".dropdown__field-types-people").removeAttr("hidden");
+        } else {
+            $(".dropdown__field-types-people").attr("hidden", "true");
+        }
+        
+    })
 
     //Кнопка очистки поля
     $(".dropdown__button-clear").click(function(){
-        amount.baby = 0;
-        amount.children = 0;
-        amount.people = 0;
+        amount.third = 0;
+        amount.second = 0;
+        amount.first = 0;
         $(".dropdown__operations_minus").attr("disabled", "disabled");
-        $(".dropdown__value.people").text(amount.people);
-        $(".dropdown__value.children").text(amount.children);
-        $(".dropdown__value.baby").text(amount.baby);
+        $(".dropdown__value.first").text(amount.first);
+        $(".dropdown__value.second").text(amount.second);
+        $(".dropdown__value.third").text(amount.third);
         $(".dropdown__common-num-people").text("Сколько гостей");
     })
 
     //Кнопка применение выбранного количества человек
     $(".dropdown__button-apply").click(function(){
-        amountOver = amount.people + amount.children + amount.baby;
+        amountOver = amount.first + amount.second + amount.third;
         let remain = amountOver%10;
         if(amountOver == 0){
             $(".dropdown__common-num-people").text("Сколько гостей");
@@ -96,16 +110,7 @@ export function dropdown(){
         
     })
 
-    $(".dropdown__article").click(function(){
-        let hidden = $(".dropdown__field-types-people").attr("hidden");
-        if(hidden == "hidden"){
-            $(".dropdown__field-types-people").removeAttr("hidden");
-        } else {
-            $(".dropdown__field-types-people").attr("hidden", "true");
-        }
-        
-    })
-
+//Исчезновение поля выбора при нажатии "Применить"
     $(".dropdown__button-apply").click(function(){
         $(".dropdown__field-types-people").attr("hidden", "true");
     })
@@ -116,7 +121,7 @@ export function dropdown(){
     });
     $(".dropdown__operations_minus").click(function(){
         let sumPeople=0;
-        sumPeople = amount.people + amount.children + amount.baby;
+        sumPeople = amount.first + amount.second + amount.third;
         if(sumPeople==0){
             $(".dropdown__button-clear").removeClass("dropdown__button-visible");
         }
@@ -124,4 +129,78 @@ export function dropdown(){
     $(".dropdown__button-clear").click(function(){
         $(".dropdown__button-clear").removeClass("dropdown__button-visible");
     })
+
+    
+
+
+//Dropdown кнопки номеров
+    //Кнопка очистки поля
+    $(".dropdown__but-clear").click(function(){
+        amount.third = 0;
+        amount.second = 0;
+        amount.first = 0;
+        $(".dropdown__operations_minus").attr("disabled", "disabled");
+        $(".dropdown__value.first").text(amount.first);
+        $(".dropdown__value.second").text(amount.second);
+        $(".dropdown__value.third").text(amount.third);
+        $(".dropdown__common-num-people").text("");
+    })
+
+
+    //Появление и исчезновение кнопки "очистить"
+    $(".dropdown__operations_plus").click(function(){
+        $(".dropdown__but-clear").addClass("dropdown__button-visible");
+    });
+    $(".dropdown__operations_minus").click(function(){
+        let sumPeople=0;
+        sumPeople = amount.first + amount.second + amount.third;
+        if(sumPeople==0){
+            $(".dropdown__but-clear").removeClass("dropdown__button-visible");
+        }
+    })
+    $(".dropdown__but-clear").click(function(){
+        $(".dropdown__but-clear").removeClass("dropdown__button-visible");
+    })
+
+
+
+   
+
+
+    //Кнопка применение выбранного количества человек
+    $(".dropdown__but-apply").click(function(){
+        $(".dropdown__common-num-people").text("");
+        let masName = [[" спален, ", " спальня, ", " спальни, "], [" кроватей, ", " кровать, ", " кровати, "], [" ванных комнат", " ванная комната", " ванные комнаты"]];
+        let amountGuest = [];
+        for(let key in amount){
+            amountGuest.push(amount[key]);
+        }
+
+        
+        $(".dropdown__common-num-people").find(".first").remove();
+        for(let i = 0; i<amountGuest.length; i++){
+            let room = amountGuest[i]%10;
+            if(room == 0){
+                $(".dropdown__common-num-people").text("");
+            }
+            else if(room>10 && room<15){
+                $(".dropdown__common-num-people").append(amountGuest[i] + masName[i][0]);
+            }
+            else if(room<2){
+                $(".dropdown__common-num-people").append(amountGuest[i] + masName[i][1]);
+            } else if (room<5){
+                $(".dropdown__common-num-people").append(amountGuest[i] + masName[i][2]);
+            } else {
+                $(".dropdown__common-num-people").append(amountGuest[i] + masName[i][0]);
+            }  
+        }
+        
+    })
+
+    $(".dropdown__but-apply").click(function(){
+        $(".dropdown__field-types-people").attr("hidden", "true");
+    })
+
 }
+
+
