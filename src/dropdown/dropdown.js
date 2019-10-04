@@ -176,7 +176,6 @@ export function dropdown(){
             amountGuest.push(amount[key]);
         }
 
-        
         $(".dropdown__common-num-people").find(".first").remove();
         for(let i = 0; i<amountGuest.length; i++){
             let room = amountGuest[i]%10;

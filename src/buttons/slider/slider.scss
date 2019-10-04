@@ -1,0 +1,61 @@
+$text-color:rgba(31, 32, 65, 0.5);
+
+.slider{
+    font: {
+        family:'Montserrat-Regular';
+        style: normal;
+        size: 12px;
+    }
+    line-height: 15px;
+    width: 266px;
+    height: 78px;
+    color:$text-color;
+}
+
+.slider__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.slider__price-range{
+    text-transform: uppercase;
+    color: #1F2041;
+    font-weight: bold;
+}
+
+.slider__price-output-disigned{
+    margin:0px;
+    display: inline-block;
+    font-weight: normal;
+
+}
+
+.slider__symbol{
+    visibility: visible;
+    font-weight:normal;
+}
+
+.slider__chose-price{
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.ui-slider-range.ui-widget-header{
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.ui-corner-all.ui-state-default{
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)!important;
+    border: 2px solid #FFFFFF !important;
+    top:-0.4em !important;
+    border-radius: 10px;
+    outline: none;
+}
+
+.slider__info{
+    margin:0px;
+    margin-top:13px;
+}

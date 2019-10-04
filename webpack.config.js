@@ -14,8 +14,10 @@ const common = merge([{
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery/dist/jquery.min.js",
-      jQuery: "jquery/dist/jquery.min.js"
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"
     }),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
