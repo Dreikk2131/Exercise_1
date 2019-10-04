@@ -15,28 +15,3 @@ mixin button-color(value,className)
         input(type="button" value=value class = className).button-color__view-button 
 
 
-mixin checkbox
-    div.checkbox
-        h2.checkbox__title Checkbox buttons 
-        div.checkbox__list
-            div.checkbox__list-item
-                input(type="checkbox")
-                p.checkbox__list-text Можно курить
-            div.checkbox__list-item
-                input(type="checkbox")
-                p.checkbox__list-text Можно с питомцами
-            div.checkbox__list-item
-                input(type="checkbox")
-                p.checkbox__list-text Можно пригласить гостей (до 10 человек)
-
-
-mixin toggle
-    div.toggle
-        input(type="checkbox" class="toggle__checkbox" id="toggle")
-        label(for="toggle" class="toggle__text") Получать спецпредложения
-
-
-mixin radio(value)
-    div.radio
-        input(type="radio" class="radio__field" id="radio")
-        label(for="radio" class="radio__text") #{value}
