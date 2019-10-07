@@ -1,19 +1,18 @@
 mixin checkbox-button
     div.checkbox
         h2.checkbox__title Checkbox buttons 
+
+        mixin checkbox(text)
+            div.checkbox__list-item
+                input(type="checkbox").checkbox__button
+                span.checkbox__arrow
+                p.checkbox__list-text #{text}
+
         div.checkbox__list
-            div.checkbox__list-item
-                input(type="checkbox").checkbox__button
-                span.checkbox__arrow
-                p.checkbox__list-text Можно курить
-            div.checkbox__list-item
-                input(type="checkbox").checkbox__button
-                span.checkbox__arrow
-                p.checkbox__list-text Можно с питомцами
-            div.checkbox__list-item
-                input(type="checkbox").checkbox__button
-                span.checkbox__arrow
-                p.checkbox__list-text Можно пригласить гостей <br /> (до 10 человек)
+            +checkbox("Можно курить")
+            +checkbox("Можно с питомцами")
+            +checkbox("Можно пригласить гостей (до 10 человек)")
+
 
 
 mixin toggle
